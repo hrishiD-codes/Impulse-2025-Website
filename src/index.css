@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@theme {
+  --color-Background-blur: rgba(0, 0, 0, 0.4);
+  --color-facebook-blue: #1877F2;
+  --color-youtube-red:#FF0000;
+}
+
