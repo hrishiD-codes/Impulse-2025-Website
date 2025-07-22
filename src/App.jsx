@@ -5,7 +5,7 @@ import Navbar from './components/Navbar/navbar.jsx';
 import Home from './components/Home/home.jsx';
 import Footer from './components/Footer/footer.jsx';
 import Events from './components/Eventspages/event.jsx';
-import Organizer from './components/organizer/organizer.jsx';
+import Organizer from './components/Organizer/organizer.jsx';
 
 const App = () => {
     const [isPreloaderDone, setIsPreloaderDone] = useState(false);
