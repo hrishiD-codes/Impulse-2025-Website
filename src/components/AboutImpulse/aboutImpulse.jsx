@@ -2,7 +2,7 @@
 import '../../index.css';
 import { useState, useRef } from 'react';
 import abtImp from '../../../public/videos/impulse.mp4';
-import GoodVibes from './goodVibes.svg';
+import GoodVibes from './goodvibes.svg';
 import Fire from './fire.svg';
 import letsgo from './lets-go.svg'
 
