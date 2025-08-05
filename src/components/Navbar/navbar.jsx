@@ -57,7 +57,7 @@ export default function Navbar() {
                 </div>
             </div>
 
-            <div className={`md:hidden fixed top-0 left-0 h-screen w-screen bg-[url(../../../public/giphy.gif)] bg-cover bg-center bg-no-repeat bg-fixed z-50 overflow-x-hidden transition-all duration-500 pt-16 text-center ${isSidenavOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+            <div className={`md:hidden fixed top-0 left-0 h-screen w-screen bg-[url(/giphy.gif)] bg-cover bg-center bg-no-repeat bg-fixed z-50 overflow-x-hidden transition-all duration-500 pt-16 text-center ${isSidenavOpen ? 'translate-x-0' : '-translate-x-full'}`}>
                 <div className='cursor-pointer z-2' onClick={closeNav}
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
