@@ -1,0 +1,382 @@
+
+.cards-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+}
+
+.card {
+    position: absolute;
+    width: 350px;
+    height: 450px;
+    border-radius: 20px;
+    padding: 24px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    transform-origin: center center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/******************************** Initial stacked position ************************************/
+.card-1 {
+    transform: translateX(-450px) translateY(0px) rotate(8deg) scale(1);
+    z-index: 1;
+}
+
+.card-2 {
+    transform: translateX(-210px) translateY(30px) rotate(-5deg) scale(1);
+    z-index: 2;
+}
+
+.card-3 {
+    transform: translateX(-10px) translateY(30px) rotate(5deg) scale(1);
+    z-index: 3;
+}
+
+.card-4 {
+    transform: translateX(230px) translateY(-15px) rotate(-7deg) scale(1);
+    z-index: 4;
+}
+
+.card-5 {
+    transform: translateX(470px) translateY(45px) rotate(12deg) scale(1);
+    z-index: 5;
+}
+
+/****************************** Card 1 hover - others collapse right *********************************/
+.card-1:hover {
+    transform: translateX(-500px) translateY(0px) rotate(0deg) scale(1.05);
+    z-index: 10;
+}
+
+.card-1:hover~.card-2 {
+    transform: translateX(10px) translateY(0px) rotate(-8deg) scale(0.98);
+    z-index: 1;
+}
+
+.card-1:hover~.card-3 {
+    transform: translateX(150px) translateY(0px) rotate(5deg) scale(0.96);
+    z-index: 1;
+}
+
+.card-1:hover~.card-4 {
+    transform: translateX(350px) translateY(0px) rotate(13deg) scale(0.94);
+    z-index: 1;
+}
+
+.card-1:hover~.card-5 {
+    transform: translateX(500px) translateY(0px) rotate(-12deg) scale(0.92);
+    z-index: 1;
+}
+
+/************************* Card 2 hover - card 1 left, others right ********************************/
+.card-2:hover {
+    transform: translateX(-230px) translateY(-15px) rotate(0deg) scale(1.05);
+    z-index: 10;
+}
+
+.cards-container:has(.card-2:hover) .card-1 {
+    transform: translateX(-500px) translateY(0px) rotate(-8deg) scale(0.98);
+    z-index: 1;
+}
+
+.card-2:hover~.card-3 {
+    transform: translateX(150px) translateY(0px) rotate(5deg) scale(0.96);
+    z-index: 1;
+}
+
+.card-2:hover~.card-4 {
+    transform: translateX(290px) translateY(0px) rotate(13deg) scale(0.94);
+    z-index: 1;
+}
+
+.card-2:hover~.card-5 {
+    transform: translateX(430px) translateY(0px) rotate(-12deg) scale(0.92);
+    z-index: 1;
+}
+
+/*************************** Card 3 hover - cards 1,2 left, others right **************************/
+.card-3:hover {
+    transform: translateX(-60px) translateY(30px) rotate(0deg) scale(1.05);
+    z-index: 10;
+}
+
+.cards-container:has(.card-3:hover) .card-1 {
+    transform: translateX(-550px) translateY(0px) rotate(-8deg) scale(0.98);
+    z-index: 1;
+}
+
+.cards-container:has(.card-3:hover) .card-2 {
+    transform: translateX(-450px) translateY(0px) rotate(5deg) scale(0.96);
+    z-index: 1;
+}
+
+.card-3:hover~.card-4 {
+    transform: translateX(350px) translateY(0px) rotate(13deg) scale(0.94);
+    z-index: 1;
+}
+
+.card-3:hover~.card-5 {
+    transform: translateX(500px) translateY(0px) rotate(-12deg) scale(0.92);
+    z-index: 1;
+}
+
+/*********************** Card 4 hover - cards 1,2,3 left, card 5 right **************************/
+.card-4:hover {
+    transform: translateX(130px) translateY(-35px) rotate(0deg) scale(1.05);
+    z-index: 10;
+}
+
+.cards-container:has(.card-4:hover) .card-1 {
+    transform: translateX(-700px) translateY(0px) rotate(-8deg) scale(0.98);
+    z-index: 1;
+}
+
+.cards-container:has(.card-4:hover) .card-2 {
+    transform: translateX(-450px) translateY(0px) rotate(-12deg) scale(0.96);
+    z-index: 2;
+}
+
+.cards-container:has(.card-4:hover) .card-3 {
+    transform: translateX(-250px) translateY(0px) rotate(5deg) scale(0.94);
+    z-index: 3;
+}
+
+.card-4:hover~.card-5 {
+    transform: translateX(600px) translateY(0px) rotate(13deg) scale(0.92);
+    z-index: 1;
+}
+
+/******************************* Card 5 hover - all others left ******************************/
+.card-5:hover {
+    transform: translateX(500px) translateY(55px) rotate(0deg) scale(1.05);
+    z-index: 10;
+}
+
+.cards-container:has(.card-5:hover) .card-1 {
+    transform: translateX(-500px) translateY(0px) rotate(-8deg) scale(0.98);
+    z-index: 1;
+}
+
+.cards-container:has(.card-5:hover) .card-2 {
+    transform: translateX(-350px) translateY(0px) rotate(-12deg) scale(0.96);
+    z-index: 1;
+}
+
+.cards-container:has(.card-5:hover) .card-3 {
+    transform: translateX(-190px) translateY(0px) rotate(5deg) scale(0.94);
+    z-index: 1;
+}
+
+.cards-container:has(.card-5:hover) .card-4 {
+    transform: translateX(50px) translateY(0px) rotate(-13deg) scale(0.92);
+    z-index: 1;
+}
+
+.card-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 16px;
+    text-transform: lowercase;
+}
+
+.card-divider {
+    width: 60px;
+    height: 2px;
+    background-color: white;
+    margin-bottom: 20px;
+}
+
+.card-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.bullet {
+    margin-right: 8px;
+    font-size: 12px;
+}
+
+/******************************** Scroll animation for md+ screens *********************************/
+@media (max-width: 1024px) {
+    .cards-container {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 1.5rem !important;
+        justify-content: center !important;
+        position: relative !important;
+        height: auto !important;
+    }
+
+    .card {
+        position: relative !important;
+        transform: none !important;
+        width: 320px !important;
+        height: 384px !important;
+        z-index: auto !important;
+    }
+
+    .card-1 {
+        transform: rotate(-3deg) !important;
+        z-index: auto !important;
+    }
+
+    .card-2 {
+        transform: rotate(2deg) !important;
+        z-index: auto !important;
+    }
+
+    .card-3 {
+        transform: rotate(-2deg) !important;
+        z-index: auto !important;
+    }
+
+    .card-4 {
+        transform: rotate(3deg) !important;
+        z-index: auto !important;
+    }
+
+    .card-5 {
+        transform: rotate(-2deg) !important;
+        z-index: auto !important;
+    }
+
+    .card:hover,
+    .card-1:hover,
+    .card-2:hover,
+    .card-3:hover,
+    .card-4:hover,
+    .card-5:hover {
+        transform: none !important;
+        z-index: auto !important;
+    }
+
+    .card-1:hover~.card-2,
+    .card-1:hover~.card-3,
+    .card-1:hover~.card-4,
+    .card-1:hover~.card-5,
+    .card-2:hover~.card-3,
+    .card-2:hover~.card-4,
+    .card-2:hover~.card-5,
+    .card-3:hover~.card-4,
+    .card-3:hover~.card-5,
+    .card-4:hover~.card-5,
+    .cards-container:has(.card-2:hover) .card-1,
+    .cards-container:has(.card-3:hover) .card-1,
+    .cards-container:has(.card-3:hover) .card-2,
+    .cards-container:has(.card-4:hover) .card-1,
+    .cards-container:has(.card-4:hover) .card-2,
+    .cards-container:has(.card-4:hover) .card-3,
+    .cards-container:has(.card-5:hover) .card-1,
+    .cards-container:has(.card-5:hover) .card-2,
+    .cards-container:has(.card-5:hover) .card-3,
+    .cards-container:has(.card-5:hover) .card-4 {
+        transform: none !important;
+        z-index: auto !important;
+    }
+}
+/******************************** Mobile layout for smaller screens *********************************/
+@media (max-width: 767px) {
+    .cards-container {
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: wrap !important;
+        gap: 1.5rem !important;
+        justify-content: center !important;
+        position: relative !important;
+        height: auto !important;
+    }
+
+    .card {
+        position: relative !important;
+        transform: none !important;
+        width: 300px !important;
+        height: 350px !important;
+        z-index: auto !important;
+    }
+
+
+    .card-1 {
+        position: sticky !important;
+        top: 95px !important;
+        transform: rotate(8deg) !important;
+        z-index: auto !important;
+    }
+
+    .card-2 {
+        position: sticky !important;
+        top: 105px !important;
+        transform: rotate(-5deg) !important;
+        z-index: auto !important;
+    }
+
+    .card-3 {
+        position: sticky !important;
+        top: 107px !important;
+        transform: rotate(5deg) !important;
+        z-index: auto !important;
+    }
+
+    .card-4 {
+        position: sticky !important;
+        top: 109px !important;
+        transform: rotate(-7deg) !important;
+        z-index: auto !important;
+    }
+
+    .card-5 {
+        position: sticky !important;
+        top: 111x !important;
+        transform: rotate(12deg) !important;
+        z-index: auto !important;
+    }
+
+    .card:hover,
+    .card-1:hover,
+    .card-2:hover,
+    .card-3:hover,
+    .card-4:hover,
+    .card-5:hover {
+        transform: none !important;
+        z-index: auto !important;
+    }
+
+    .card-1:hover~.card-2,
+    .card-1:hover~.card-3,
+    .card-1:hover~.card-4,
+    .card-1:hover~.card-5,
+    .card-2:hover~.card-3,
+    .card-2:hover~.card-4,
+    .card-2:hover~.card-5,
+    .card-3:hover~.card-4,
+    .card-3:hover~.card-5,
+    .card-4:hover~.card-5,
+    .cards-container:has(.card-2:hover) .card-1,
+    .cards-container:has(.card-3:hover) .card-1,
+    .cards-container:has(.card-3:hover) .card-2,
+    .cards-container:has(.card-4:hover) .card-1,
+    .cards-container:has(.card-4:hover) .card-2,
+    .cards-container:has(.card-4:hover) .card-3,
+    .cards-container:has(.card-5:hover) .card-1,
+    .cards-container:has(.card-5:hover) .card-2,
+    .cards-container:has(.card-5:hover) .card-3,
+    .cards-container:has(.card-5:hover) .card-4 {
+        transform: none !important;
+        z-index: auto !important;
+    }
+}
