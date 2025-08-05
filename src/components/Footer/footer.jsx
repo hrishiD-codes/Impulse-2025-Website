@@ -5,7 +5,7 @@ import { IoLogoYoutube } from "react-icons/io5";
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-900 text-white">
+        <footer className="bg-gray-900 text-white select-none">
             {/* Main Footer Content */}
             <div className="mx-auto px-18 py-12">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -17,7 +17,7 @@ const Footer = () => {
                             <h3 className="text-2xl font-bold mb-4 text-blue-400">Impulse 2025</h3>
                             <p className="text-gray-300 leading-relaxed mb-6">
                                 Join us for an extraordinary celebration of heritage, art, and culture. Experience traditional
-                                performances, authentic cuisine, and connect with our vibrant community.
+                                performances, authentic cuisine, and connect with our vibrant community of Impulse.
                             </p>
 
                             {/* Contact Information */}
@@ -53,7 +53,6 @@ const Footer = () => {
                                 <ul className="space-y-2">
                                     <li><a href="#events" className="text-gray-300 hover:text-white transition-colors">Events</a></li>
                                     <li><a href="#schedule" className="text-gray-300 hover:text-white transition-colors">Schedule</a></li>
-                                    <li><a href="#tickets" className="text-gray-300 hover:text-white transition-colors">Tickets</a></li>
                                     <li><a href="#volunteer" className="text-gray-300 hover:text-white transition-colors">Brochure</a></li>
                                 </ul>
                             </div>
@@ -130,13 +129,11 @@ const Footer = () => {
             </div>
 
             {/* Bottom Footer */}
-            <div className="border-t border-gray-800">
+            <div className="border-t border-gray-700 select-none">
                 <div className="mx-auto px-18 py-6">
                     <div className="flex flex-col md:flex-row justify-between items-center">
-                        <div className="text-gray-400 text-sm mb-4 md:mb-0">
-                            © 2025 Impulse Cultural Fest | All rights reserved |
-                            <a href="#privacy" className="hover:text-white ml-2">Privacy Policy</a> |
-                            <a href="#terms" className="hover:text-white ml-2">Terms of Service</a>
+                        <div className="flex text-gray-400 text-sm mb-4 md:mb-0">
+                            © 2025 Impulse Cultural Fest All Rights Reserved 
                         </div>
                         <div className="text-gray-400 text-sm cursor-default">
                             Made with ❤️ by the Cultural Fest Dev Team

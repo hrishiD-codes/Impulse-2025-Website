@@ -1,275 +1,329 @@
 
-import '../../index.css';
-import { useState, useRef, useEffect } from 'react';
-import { FaArrowCircleRight, FaTimes } from "react-icons/fa";
-import video2 from '../../assets/Videos/intro.mp4';
+import { useState, useEffect, useRef } from 'react';
 
 export default function Events() {
-    const [isVideoPopupOpen, setIsVideoPopupOpen] = useState(false);
-    const [currentVideo, setCurrentVideo] = useState(null);
-    const [videoProgress, setVideoProgress] = useState(0);
+    const Dance = '../../../public/videos/dance.mp4';
+    const Music = '../../../public/videos/music.mp4';
+    const rhyme = '../../../public/videos/rhyme.mp4';
+    const ramp = '../../../public/videos/Ramp.mp4';
+    const Drama = '../../../public/videos/drama.mp4';
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [translateX, setTranslateX] = useState(0);
+    const [autoPlay, setAutoPlay] = useState(true);
+    const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+    const intervalRef = useRef(null);
+    const containerRef = useRef(null);
     const videoRef = useRef(null);
 
-    // Mock video URL for demo
-    const video1 = "https://www.w3schools.com/html/mov_bbb.mp4";
-
-    const events = [
+    const cards = [
         {
             id: 1,
-            category: "Cultural Festival",
-            title: "Annual Heritage Celebration",
-            date: "December 15, 2024 • 6:00 PM - 10:00 PM",
-            description: "Join us for an enchanting evening celebrating our rich cultural heritage. Experience traditional performances, authentic cuisine, and artisan displays that showcase the beauty of our diverse community.",
-            video: video2,
-            featured: true
+            video: Drama,
+            tags: ["Drama", "Street Play Drama"],
+            platform: ["Rastaye Rongomoncho"],
+            rotation: -8,
+            registrationPath: "/register/drama"
         },
         {
             id: 2,
-            category: "Music Concert",
-            title: "Traditional Folk Music Night",
-            date: "December 18, 2024 • 7:30 PM - 11:00 PM",
-            description: "Experience the soul-stirring melodies of traditional folk music performed by renowned artists. A night filled with acoustic instruments and storytelling through songs.",
-            video: video1,
-            featured: false
+            video: Dance,
+            tags: ["Solo Dance"],
+            platform: "Fiery Feet",
+            rotation: 5,
+            registrationPath: "/register/solo-dance"
         },
         {
             id: 3,
-            category: "Dance Performance",
-            title: "Classical Dance Showcase",
-            date: "December 20, 2024 • 6:00 PM - 9:00 PM",
-            description: "Witness the grace and elegance of classical dance forms performed by master dancers. An evening of artistic expression through movement and rhythm.",
-            video: video1,
-            featured: false
+            video: Dance,
+            tags: ["Group Dance"],
+            platform: "Battle of Beats",
+            rotation: 5,
+            registrationPath: "/register/group-dance"
         },
         {
             id: 4,
-            category: "Art Exhibition",
-            title: "Contemporary Art Gallery",
-            date: "December 22, 2024 • 10:00 AM - 8:00 PM",
-            description: "Explore modern interpretations of traditional themes through paintings, sculptures, and digital art. Meet the artists and learn about their creative process.",
-            video: video1,
-            featured: false
+            video: Music,
+            tags: ["Music", "Voice"],
+            platform: "Voice of Impulse",
+            rotation: -3,
+            registrationPath: "/register/music"
         },
         {
             id: 5,
-            category: "Food Festival",
-            title: "Culinary Heritage Fair",
-            date: "December 24, 2024 • 12:00 PM - 10:00 PM",
-            description: "Savor authentic flavors from different regions. Watch cooking demonstrations, participate in food workshops, and enjoy a diverse array of traditional cuisines.",
-            video: video1,
-            featured: false
+            video: rhyme,
+            tags: ["Rhyme", "Recitation"],
+            platform: "Rhyme Rice",
+            rotation: 7,
+            registrationPath: "/register/rhyme"
         },
         {
             id: 6,
-            category: "Workshop",
-            title: "Traditional Crafts Workshop",
-            date: "December 26, 2024 • 2:00 PM - 6:00 PM",
-            description: "Learn traditional handicrafts from master artisans. Create your own pottery, textiles, and woodwork while understanding the cultural significance of each craft.",
-            video: video1,
-            featured: false
+            video: ramp,
+            tags: ["Ramp Walk"],
+            platform: "Ramp On Fire",
+            rotation: -5,
+            registrationPath: "/register/ramp-walk"
         },
-        {
-            id: 7,
-            category: "Closing Ceremony",
-            title: "Grand Finale Celebration",
-            date: "December 28, 2024 • 8:00 PM - 11:00 PM",
-            description: "Join us for the spectacular closing ceremony featuring highlights from all events, special performances, and awards presentation. A memorable conclusion to our cultural fest.",
-            video: video1,
-            featured: false
-        }
     ];
 
-    const openVideoPopup = (video) => {
-        setCurrentVideo(video);
-        setIsVideoPopupOpen(true);
-        setVideoProgress(0);
-    };
-
-    const closeVideoPopup = () => {
-        setIsVideoPopupOpen(false);
-        setCurrentVideo(null);
-        setVideoProgress(0);
-        if (videoRef.current) {
-            videoRef.current.pause();
-            videoRef.current.currentTime = 0;
-        }
-    };
-
-    const handleVideoTimeUpdate = () => {
-        if (videoRef.current) {
-            const progress = (videoRef.current.currentTime / videoRef.current.duration) * 100;
-            setVideoProgress(progress);
-        }
-    };
-
-    const handleVideoEnded = () => {
-        closeVideoPopup();
-    };
-
-    // Close popup when clicking outside the video
-    const handleOverlayClick = (e) => {
-        if (e.target === e.currentTarget) {
-            closeVideoPopup();
-        }
-    };
-
-    // Close popup with Escape key
+    // Auto-play functionality
     useEffect(() => {
-        const handleEscapeKey = (e) => {
-            if (e.key === 'Escape') {
-                closeVideoPopup();
-            }
-        };
-
-        if (isVideoPopupOpen) {
-            document.addEventListener('keydown', handleEscapeKey);
+        if (autoPlay && !isDragging && !isVideoPlaying) {
+            intervalRef.current = setInterval(() => {
+                setCurrentIndex((prev) => (prev + 1) % cards.length);
+            }, 3000);
         }
 
         return () => {
-            document.removeEventListener('keydown', handleEscapeKey);
+            if (intervalRef.current) {
+                clearInterval(intervalRef.current);
+            }
         };
-    }, [isVideoPopupOpen]);
+    }, [autoPlay, isDragging, isVideoPlaying, cards.length]);
 
-    const EventCard = ({ event, isReversed }) => (
-        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-white rounded-lg shadow-lg overflow-hidden ${isReversed ? 'lg:grid-flow-col-dense' : ''}`}>
-            {/* Event Video */}
-            <div className={`relative ${isReversed ? 'lg:col-start-2' : ''}`}>
-                <div
-                    className="relative cursor-pointer group"
-                    onClick={() => openVideoPopup(event.video)}
-                >
-                    <video
-                        src={event.video}
-                        className="w-full h-64 lg:h-80 object-cover"
-                        muted
-                        preload="metadata"
-                    />
-                    {/* Play button overlay */}
-                    <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center group-hover:bg-opacity-40 transition-all duration-200">
-                        <div className="bg-white bg-opacity-90 rounded-full p-4 group-hover:scale-110 transition-transform duration-200">
-                            <svg className="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M8 5v14l11-7z" />
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-                {event.featured && (
-                    <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                        Inter College Event
-                    </div>
-                )}
-            </div>
+    // Video handlers
+    const handleVideoPlay = () => {
+        setIsVideoPlaying(true);
+        setAutoPlay(false);
+    };
 
-            {/* Event Details */}
-            <div className={`p-6 lg:p-8 ${isReversed ? 'lg:col-start-1' : ''}`}>
-                <div className="mb-4">
-                    <span className="text-blue-600 text-sm font-medium uppercase tracking-wide">
-                        {event.category}
-                    </span>
-                    <h2 className="text-3xl font-bold text-gray-900 mt-2 mb-4">
-                        {event.title}
-                    </h2>
-                </div>
+    const handleVideoEnded = () => {
+        setIsVideoPlaying(false);
+        setAutoPlay(true);
+    };
 
-                <div className="space-y-3 mb-6">
-                    <div className="flex items-center text-gray-600">
-                        <svg className="w-5 h-5 mr-3 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                        <span>{event.date}</span>
-                    </div>
-                </div>
+    // Touch/Mouse handlers
+    const handleStart = (e) => {
+        setIsDragging(true);
+        setAutoPlay(false);
+        const clientX = e.type === 'mousedown' ? e.clientX : e.touches[0].clientX;
+        setStartX(clientX);
+        setTranslateX(0);
+    };
 
-                <p className="text-gray-700 mb-6 leading-relaxed">
-                    {event.description}
-                </p>
+    const handleMove = (e) => {
+        if (!isDragging) return;
 
-                <div className="flex flex-col sm:flex-row gap-4">
-                    <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200 flex items-center justify-center gap-3">
-                        <FaArrowCircleRight />
-                        <h4>Register Now</h4>
-                    </button>
-                </div>
-            </div>
-        </div>
-    );
+        const clientX = e.type === 'mousemove' ? e.clientX : e.touches[0].clientX;
+        const diff = clientX - startX;
+        setTranslateX(diff);
+    };
+
+    const handleEnd = () => {
+        if (!isDragging) return;
+
+        setIsDragging(false);
+
+        // Threshold for changing cards
+        const threshold = 100;
+
+        if (Math.abs(translateX) > threshold) {
+            if (translateX > 0) {
+                // Swipe right - go to previous
+                setCurrentIndex((prev) => (prev - 1 + cards.length) % cards.length);
+            } else {
+                // Swipe left - go to next
+                setCurrentIndex((prev) => (prev + 1) % cards.length);
+            }
+        }
+
+        setTranslateX(0);
+
+        // Resume auto-play after 5 seconds if no video is playing
+        if (!isVideoPlaying) {
+            setTimeout(() => setAutoPlay(true), 5000);
+        }
+    };
+
+    const getCardStyle = (index) => {
+        const isActive = index === currentIndex;
+        const offset = index - currentIndex;
+
+        let transform = '';
+        let zIndex = 0;
+        let opacity = 0.6;
+        let scale = 0.85;
+
+        if (isActive) {
+            transform = `translateX(${translateX}px) rotate(0deg)`;
+            zIndex = 10;
+            opacity = 100;
+            scale = 1;
+        } else if (offset === 1 || (offset === -(cards.length - 1))) {
+            transform = `translateX(${120 + translateX}px) rotate(12deg)`;
+            zIndex = 5;
+        } else if (offset === -1 || (offset === cards.length - 1)) {
+            transform = `translateX(${-120 + translateX}px) rotate(-12deg)`;
+            zIndex = 5;
+        } else {
+            transform = `translateX(${offset * 0 + translateX}px) rotate(${cards[index].rotation}deg) scale(0.7)`;
+            zIndex = 1;
+            opacity = 100;
+        }
+
+        return {
+            transform: `${transform} scale(${scale})`,
+            zIndex,
+            opacity,
+            transition: isDragging ? 'none' : 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+        };
+    };
+
+    const handleRegistration = (path) => {
+        // For demonstration, we'll just log the path. In a real app, you'd use navigation
+        console.log('Navigating to:', path);
+        // window.location.href = path; // or use router.push(path) with Next.js
+    };
 
     return (
-        <div className="mx-auto p-8">
-            <div className="mb-12 text-center">
-                <h1 className="text-4xl font-bold text-gray-900 mb-4">Our Events</h1>
-                <p className="text-xl text-gray-600">Discover the beauty of our heritage through 7 amazing events</p>
+        <div className="relative min-h-screen bg-black flex flex-col items-center justify-center p-2 sm:p-4 overflow-hidden">
+            <div className="absolute top-4 sm:top-8 mb-4 sm:mb-8 pt-2 sm:pt-5 text-center px-4">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-4">Our Events</h1>
+                <p className="text-sm sm:text-lg md:text-xl text-white px-2">Discover the beauty of our heritage through six amazing events</p>
+            </div>
+            <div
+                ref={containerRef}
+                className="relative mt-16 sm:mt-20 md:mt-30 w-full max-w-xs sm:max-w-2xl md:max-w-4xl h-64 sm:h-80 md:h-96 flex items-center justify-center"
+                onMouseDown={handleStart}
+                onMouseMove={handleMove}
+                onMouseUp={handleEnd}
+                onMouseLeave={handleEnd}
+                onTouchStart={handleStart}
+                onTouchMove={handleMove}
+                onTouchEnd={handleEnd}
+                style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
+            >
+                {cards.map((card, index) => (
+                    <div
+                        key={card.id}
+                        className="absolute w-52 h-72 sm:w-72 sm:h-96 md:w-80 md:h-120 rounded-2xl overflow-hidden border-2 sm:border-4 border-white shadow-2xl"
+                        style={getCardStyle(index)}
+                    >
+                        {/* Card Content */}
+                        {card.video ? (
+                            <div className="w-full h-full relative">
+                                <video
+                                    ref={index === currentIndex ? videoRef : null}
+                                    className="w-full h-full object-cover rounded-lg"
+                                    muted={false}
+                                    onPlay={handleVideoPlay}
+                                    onEnded={handleVideoEnded}
+                                    onPause={() => setIsVideoPlaying(false)}
+                                >
+                                    <source src={card.video} type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                </video>
+
+                                {/* Custom Play Button */}
+                                {!isVideoPlaying && index === currentIndex && (
+                                    <div className="absolute inset-0 flex items-center justify-center">
+                                        <button
+                                            onClick={() => {
+                                                if (videoRef.current) {
+                                                    videoRef.current.play();
+                                                }
+                                            }}
+                                            className="bg-white/20 backdrop-blur-sm hover:bg-white/30 rounded-full p-4 sm:p-6 transition-all duration-300 transform hover:scale-110 cursor-pointer"
+                                        >
+                                            <svg
+                                                className="w-8 h-8 sm:w-12 sm:h-12 text-white"
+                                                fill="currentColor"
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path d="M8 5v14l11-7z" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                )}
+
+                                {/* Overlay for tags and platform */}
+                                <div className="absolute inset-0 pointer-events-none">
+                                    <div className="absolute top-2 sm:top-4 left-2 sm:left-4 flex flex-wrap gap-1 sm:gap-2">
+                                        {card.tags.map((tag, tagIndex) => (
+                                            <span
+                                                key={tagIndex}
+                                                className="bg-white/50 backdrop-blur-sm text-black px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-medium"
+                                            >
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
+
+                                    <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4">
+                                        <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-black px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-bold">
+                                            {card.platform}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        ) : (
+                            <div
+                                className="w-full h-full bg-cover bg-center relative"
+                                style={{ backgroundImage: `url(${card.image})` }}
+                            >
+                                {/* Overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+
+                                {/* Tags */}
+                                <div className="absolute top-2 sm:top-4 left-2 sm:left-4 flex flex-wrap gap-1 sm:gap-2">
+                                    {card.tags.map((tag, tagIndex) => (
+                                        <span
+                                            key={tagIndex}
+                                            className="bg-white/20 backdrop-blur-sm text-white px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-medium"
+                                        >
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+
+                                <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4">
+                                    <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-black px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-bold">
+                                        {card.platform}
+                                    </span>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                ))}
             </div>
 
-            <div className="space-y-12">
-                {events.map((event, index) => (
-                    <EventCard
-                        key={event.id}
-                        event={event}
-                        isReversed={index % 2 !== 0}
+            {/* Registration Button for Active Card */}
+            <div className="mt-6 sm:mt-8">
+                <button
+                    onClick={() => handleRegistration(cards[currentIndex].registrationPath)}
+                    className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-black font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-full text-sm sm:text-lg transition-all duration-300 transform hover:scale-105 shadow-lg translate-y-8 cursor-pointer"
+                >
+                    Register Now
+                </button>
+            </div>
+
+            {/* Dots indicator */}
+            <div className="absolute bottom-5 sm:bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-1 sm:space-x-2">
+                {cards.map((_, index) => (
+                    <button
+                        key={index}
+                        onClick={() => {
+                            setCurrentIndex(index);
+                            setAutoPlay(false);
+                            if (!isVideoPlaying) {
+                                setTimeout(() => setAutoPlay(true), 5000);
+                            }
+                        }}
+                        className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${index === currentIndex
+                            ? 'bg-white scale-125'
+                            : 'bg-white/40 hover:bg-white/60'
+                            }`}
                     />
                 ))}
             </div>
 
-            {/* Video Popup Modal */}
-            {isVideoPopupOpen && (
-                <div
-                    className="fixed inset-0 bg-Background-blur bg-opacity-80 flex items-center justify-center z-50"
-                    onClick={handleOverlayClick}
-                >
-                    <div className="relative max-w-4xl max-h-[90vh] w-full mx-4">
-                        {/* Close button with rotating progress ring */}
-                        <div className="absolute -top-14 right-0 z-10">
-                            <div className="relative">
-                                {/* Progress ring */}
-                                <svg className="w-12 h-12 transform -rotate-90" viewBox="0 0 48 48">
-                                    <circle
-                                        cx="24"
-                                        cy="24"
-                                        r="20"
-                                        fill="none"
-                                        stroke="rgba(255,255,255,0.3)"
-                                        strokeWidth="4"
-                                    />
-                                    <circle
-                                        cx="24"
-                                        cy="24"
-                                        r="20"
-                                        fill="none"
-                                        stroke="white"
-                                        strokeWidth="4"
-                                        strokeDasharray={`${2 * Math.PI * 20}`}
-                                        strokeDashoffset={`${2 * Math.PI * 20 * (1 - videoProgress / 100)}`}
-                                        className="transition-all duration-100"
-                                    />
-                                </svg>
-                                {/* Close button */}
-                                <button
-                                    onClick={closeVideoPopup}
-                                    className="absolute inset-0 bg-Background-blur bg-opacity-50 hover:bg-opacity-70 rounded-full flex items-center justify-center text-white transition-all duration-200"
-                                >
-                                    <FaTimes className="w-5 h-5" />
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* Video */}
-                        <video
-                            ref={videoRef}
-                            src={currentVideo}
-                            controls={false}
-                            autoPlay
-                            className="w-full h-auto max-h-[90vh] rounded-lg"
-                            onTimeUpdate={handleVideoTimeUpdate}
-                            onEnded={handleVideoEnded}
-                            style={{
-                                outline: 'none',
-                                WebkitAppearance: 'none',
-                            }}
-                        />
-                    </div>
-                </div>
-            )}
+            {/* Auto-play indicator */}
+            <div className="absolute flex items-center gap-1 sm:gap-2 top-35 lg:top-10 right-4 sm:right-8 bg-white px-2 sm:px-4 py-1 sm:py-2 rounded-full cursor-pointer">
+                <h1 className='text-sm sm:text-xl md:text-2xl font-bold text-black'>LIVE</h1>
+                <div className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${(autoPlay && !isVideoPlaying) ? 'bg-green-400' : 'bg-red-400'} animate-pulse`} />
+            </div>
         </div>
-    );
+    )
 }
