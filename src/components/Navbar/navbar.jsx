@@ -32,7 +32,7 @@ export default function Navbar() {
                     MENU
                 </h1>
 
-                <div className={`hidden md:block absolute top-5 left-4 h-[30rem] w-[18rem] bg-[url(../../../public/giphy.gif)] rounded-lg z-5 transition-all duration-300 ${isHovered ? 'opacity-100 visible' : 'opacity-0 invisible'
+                <div className={`hidden md:block absolute top-5 left-4 h-[30rem] w-[18rem] bg-[url(/giphy.gif)] rounded-lg z-5 transition-all duration-300 ${isHovered ? 'opacity-100 visible' : 'opacity-0 invisible'
                     }`}>
                     <div className="flex flex-col p-4 gap-6 justify-center items-start mt-15 pl-7">
                         <a href="/" className="block text-2xl bg-white rounded-tl-2xl rounded-br-2xl text-black hover:scale-120 transition-all duration-300 no-underline whitespace-nowrap px-6 py-1 font-medium">
