@@ -14,8 +14,8 @@ const Footer = () => {
                     <div className="space-y-8">
                         {/* Festival Info */}
                         <div>
-                            <h3 className="text-2xl font-bold mb-4 text-blue-400">Impulse 2025</h3>
-                            <p className="text-gray-300 leading-relaxed mb-6">
+                            <h3 className="font-akira text-2xl font-bold mb-4 text-blue-400">Impulse 2025</h3>
+                            <p className="font-akira text-gray-300 font-normal leading-relaxed mb-6">
                                 Join us for an extraordinary celebration of heritage, art, and culture. Experience traditional
                                 performances, authentic cuisine, and connect with our vibrant community of Impulse.
                             </p>
@@ -26,14 +26,14 @@ const Footer = () => {
                                     <svg className="w-5 h-5 mr-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                                     </svg>
-                                    <span>+1 (555) 123-4567</span>
+                                    <span className="font-technor font-normal">+1 (555) 123-4567</span>
                                 </div>
 
                                 <div className="flex items-center text-gray-300">
                                     <svg className="w-5 h-5 mr-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                     </svg>
-                                    <span>info@culturalfest.org</span>
+                                    <span className="font-technor font-normal">info@culturalfest.org</span>
                                 </div>
 
                                 <div className="flex items-center text-gray-300">
@@ -41,7 +41,7 @@ const Footer = () => {
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                     </svg>
-                                    <span>123 Cultural Center Dr, Arts District, City</span>
+                                    <span className="font-technor font-normal">123 Cultural Center Dr, Arts District, City</span>
                                 </div>
                             </div>
                         </div>
@@ -49,35 +49,35 @@ const Footer = () => {
                         {/* Quick Links */}
                         <div className="grid grid-cols-2 gap-8">
                             <div>
-                                <h4 className="text-lg font-semibold mb-4 text-blue-400">Quick Links</h4>
+                                <h4 className="text-lg font-technor font-semibold mb-4 text-blue-400">Quick Links</h4>
                                 <ul className="space-y-2">
-                                    <li><a href="#events" className="text-gray-300 hover:text-white transition-colors">Events</a></li>
-                                    <li><a href="#schedule" className="text-gray-300 hover:text-white transition-colors">Schedule</a></li>
-                                    <li><a href="#volunteer" className="text-gray-300 hover:text-white transition-colors">Brochure</a></li>
+                                    <li><a href="/events" className="text-gray-300 font-technor font-normal hover:text-white transition-colors">Events</a></li>
+                                    <li><a href="schedule" className="text-gray-300 font-technor font-normal hover:text-white transition-colors">Schedule</a></li>
+                                    <li><a href="volunteer" className="text-gray-300 font-technor font-normal hover:text-white transition-colors">Brochure</a></li>
                                 </ul>
                             </div>
 
                             <div>
-                                <h4 className="text-lg font-semibold mb-4 text-blue-400">Support</h4>
+                                <h4 className="text-lg font-technor font-semibold mb-4 text-blue-400">Support</h4>
                                 <ul className="space-y-2">
-                                    <li><a href="#faq" className="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
-                                    <li><a href="#contact" className="text-gray-300 hover:text-white transition-colors">Contact Us</a></li>
+                                    <li><a href="#faq" className="text-gray-300 font-technor font-normal hover:text-white transition-colors">FAQ</a></li>
+                                    <li><a href="/contact" className="text-gray-300 font-technor font-normal hover:text-white transition-colors">Contact Us</a></li>
                                 </ul>
                             </div>
                         </div>
 
                         {/* Social Media */}
                         <div>
-                            <h4 className="text-lg font-semibold mb-4 text-blue-400">Follow Us</h4>
+                            <h4 className="text-lg font-technor font-semibold mb-4 text-blue-400">Follow Us</h4>
                             <div className="flex space-x-4">
                                 <a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">
-                                    <FaInstagram className='w-6 h-6'/>
+                                    <FaInstagram className='w-6 h-6' />
                                 </a>
                                 <a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">
-                                    <FaFacebookSquare className='w-6 h-6'/>
+                                    <FaFacebookSquare className='w-6 h-6' />
                                 </a>
                                 <a href="#" className="text-gray-300 hover:text-blue-400 transition-colors">
-                                    <IoLogoYoutube className='w-6 h-6'/>
+                                    <IoLogoYoutube className='w-6 h-6' />
                                 </a>
                             </div>
                         </div>
@@ -85,8 +85,8 @@ const Footer = () => {
 
                     {/* Right Side - Auditorium Location Map */}
                     <div>
-                        <h3 className="text-2xl font-bold mb-4 text-blue-400">Auditorium Location</h3>
-                        <p className="text-gray-300 mb-6">
+                        <h3 className="text-2xl font-technor font-bold mb-4 text-blue-400">Auditorium Location</h3>
+                        <p className="text-gray-300 font-akira font-normal mb-6">
                             Find us at the Cultural Center Auditorium - the heart of our festival celebrations
                         </p>
 
@@ -108,15 +108,15 @@ const Footer = () => {
 
                                 {/* Overlay with location details */}
                                 <div className="absolute bottom-4 left-4 right-4 bg-black/80 text-white p-4 rounded-lg">
-                                    <h4 className="font-semibold text-lg mb-2">Cultural Center Auditorium</h4>
-                                    <p className="text-sm text-gray-300 mb-2">BIT College Playground Area</p>
+                                    <h4 className="font-technor font-semibold text-lg mb-2">Cultural Center Auditorium</h4>
+                                    <p className="text-sm font-akira font-normal text-gray-300 mb-2">BIT College Playground Area</p>
                                     <div className="flex items-center justify-between">
-                                        <span className="text-xs text-gray-400">📍 Main Venue</span>
+                                        <span className="text-xs font-technor font-normal text-gray-400">📍 Main Venue</span>
                                         <a
                                             href="https://www.google.com/maps/place/BIT+college+Playground/@22.5211974,88.4587293,818m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3a02757622d6b955:0xe78397c20d307bb9!8m2!3d22.5211974!4d88.4613042!16s%2Fg%2F11h3n0b0gn?entry=ttu&g_ep=EgoyMDI1MDcwOC4wIKXMDSoASAFQAw%3D%3D"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="text-blue-400 hover:text-blue-300 text-sm font-medium"
+                                            className="text-blue-400 font-technor font-medium hover:text-blue-300 text-sm"
                                         >
                                             Get Directions →
                                         </a>
@@ -132,10 +132,10 @@ const Footer = () => {
             <div className="border-t border-gray-700 select-none">
                 <div className="mx-auto px-18 py-6">
                     <div className="flex flex-col md:flex-row justify-between items-center">
-                        <div className="flex text-gray-400 text-sm mb-4 md:mb-0">
-                            © 2025 Impulse Cultural Fest All Rights Reserved 
+                        <div className="flex text-gray-400 font-technor font-normal text-sm mb-4 md:mb-0">
+                            © 2025 Impulse Cultural Fest All Rights Reserved
                         </div>
-                        <div className="text-gray-400 text-sm cursor-default">
+                        <div className="text-gray-400 font-technor font-normal text-sm cursor-default">
                             Made with ❤️ by the Cultural Fest Dev Team
                         </div>
                     </div>

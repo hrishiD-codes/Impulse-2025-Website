@@ -74,7 +74,7 @@ export default function ShadesOfImpulse() {
     return (
         <>
             <div className="bg-[url('/public/background.svg')] p-8 min-h-screen select-none">
-                <h1 className="text-[1.5rem] sm:text-4xl md:text-5xl font-bold text-black text-center mb-18 pt-5 sticky top-0 md:static">
+                <h1 className="font-technor text-[1.5rem] sm:text-4xl md:text-5xl font-bold text-black text-center mb-18 pt-5 sticky top-0 md:static">
                     <span className='text-black'>✦</span> Shades of Impulse <span className='text-black'>✦</span>
                 </h1>
 
