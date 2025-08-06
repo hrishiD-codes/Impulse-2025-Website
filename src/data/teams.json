@@ -1,0 +1,132 @@
+{
+    "conveners": [
+        {
+            "id": 1,
+            "name": "Dr. John Smith",
+            "position": "Faculty Convener",
+            "image": "/teams/Subhro.jpg",
+            "social": {
+                "linkedin": "",
+                "instagram": ""
+            }
+        },
+        {
+            "id": 2,
+            "name": "Prof. Sarah Johnson",
+            "position": "Co-Convener",
+            "image": "/teams/Subhro.jpg",
+            "social": {
+                "linkedin": "",
+                "instagram": ""
+            }
+        }
+    ],
+    "organizers": [
+        {
+            "id": 3,
+            "name": "Alex Rodriguez",
+            "position": "Event Head",
+            "image": "/teams/Subhro.jpg",
+            "social": {
+                "linkedin": "",
+                "instagram": ""
+            }
+        },
+        {
+            "id": 4,
+            "name": "Emma Wilson",
+            "position": "Cultural Head",
+            "image": "/teams/Subhro.jpg",
+            "social": {
+                "linkedin": "",
+                "instagram": ""
+            }
+        },
+        {
+            "id": 5,
+            "name": "Michael Chen",
+            "position": "Technical Head",
+            "image": "/teams/Subhro.jpg",
+            "social": {
+                "linkedin": "",
+                "instagram": ""
+            }
+        },
+        {
+            "id": 6,
+            "name": "Sofia Garcia",
+            "position": "Marketing Head",
+            "image": "/teams/Subhro.jpg",
+            "social": {
+                "linkedin": "",
+                "instagram": ""
+            }
+        }
+    ],
+    "coordinators": [
+        {
+            "id": 7,
+            "name": "David Kim",
+            "position": "Logistics Coordinator",
+            "image": "/teams/Subhro.jpg",
+            "social": {
+                "linkedin": "",
+                "instagram": ""
+            }
+        },
+        {
+            "id": 8,
+            "name": "Lisa Zhang",
+            "position": "Sponsorship Coordinator",
+            "image": "/teams/Subhro.jpg",
+            "social": {
+                "linkedin": "",
+                "instagram": ""
+            }
+        },
+        {
+            "id": 9,
+            "name": "Ryan Thompson",
+            "position": "Media Coordinator",
+            "image": "/teams/Subhro.jpg",
+            "social": {
+                "linkedin": "",
+                "instagram": ""
+            }
+        },
+        {
+            "id": 10,
+            "name": "Priya Patel",
+            "position": "Registration Coordinator",
+            "image": "/teams/Subhro.jpg",
+            "social": {
+                "linkedin": "",
+                "instagram": ""
+            }
+        }
+    ],
+    "developers": [
+        {
+            "id": 11,
+            "name": "Hrishikesh Das",
+            "position": "Lead Developer",
+            "image": "/teams/Subhro.jpg",
+            "social": {
+                "linkedin": "",
+                "instagram": "",
+                "github": ""
+            }
+        },
+        {
+            "id": 12,
+            "name": "Subhro Mohanta",
+            "position": "Asst. Developer",
+            "image": "/teams/Subhro.jpg",
+            "social": {
+                "linkedin": "https://linkedin.com/in/subhro-mohanta",
+                "instagram": "https://www.instagram.com/just.subhro?igsh=MTcycm43Nzc5NTlneg==",
+                "github": "https://github.com/imSubhro"
+            }
+        }
+    ]
+}
