@@ -19,9 +19,15 @@ const HomePage = () => {
     return (
         <>
             {isPreloaderDone ? <Home /> : <Preloader onFinish={() => setIsPreloaderDone(true)} />}
-            <AboutImpulse />
-            <ShadesOfImpulse />
-            <Events />
+            <div id="about">
+                <AboutImpulse />
+            </div>
+            <div id="shades">
+                <ShadesOfImpulse />
+            </div>
+            <div id="events">
+                <Events />
+            </div>
             <MarqueeCombine />
             <Faq />
             {/* <Organizer/> */}
