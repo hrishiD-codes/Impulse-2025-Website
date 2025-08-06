@@ -18,6 +18,22 @@ export default function Navbar() {
         setIsSidenavOpen(false);
     };
 
+    const handleNavClick = (sectionId) => {
+        // Close mobile menu if open
+        if (isSidenavOpen) {
+            closeNav();
+        }
+
+        // Smooth scroll to section
+        const element = document.querySelector(sectionId);
+        if (element) {
+            element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    };
+
     return (
         <nav>
             <div className='cursor-pointer'
@@ -38,13 +54,28 @@ export default function Navbar() {
                         <a href="/" className="block text-2xl bg-white rounded-tl-2xl rounded-br-2xl text-black hover:scale-120 transition-all duration-300 no-underline whitespace-nowrap px-6 py-1 font-medium">
                             HOME
                         </a>
-                        <a href="/#about" className="block text-2xl bg-white rounded-tl-2xl rounded-br-2xl text-black hover:scale-120 transition-all duration-300 no-underline whitespace-nowrap px-6 py-1 font-medium">
+                        <a href="#about"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                handleNavClick('#about');
+                            }}
+                            className="block text-2xl bg-white rounded-tl-2xl rounded-br-2xl text-black hover:scale-120 transition-all duration-300 no-underline whitespace-nowrap px-6 py-1 font-medium">
                             ABOUT
                         </a>
-                        <a href="/#shades" className="block text-2xl bg-white rounded-tl-2xl rounded-br-2xl text-black hover:scale-120 transition-all duration-300 no-underline whitespace-nowrap px-6 py-1 font-medium">
+                        <a href="/#shades"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                handleNavClick('#shades');
+                            }}
+                            className="block text-2xl bg-white rounded-tl-2xl rounded-br-2xl text-black hover:scale-120 transition-all duration-300 no-underline whitespace-nowrap px-6 py-1 font-medium">
                             ARTISTS
                         </a>
-                        <a href="/#events" className="block text-2xl bg-white rounded-tl-2xl rounded-br-2xl text-black hover:scale-120 transition-all duration-300 no-underline whitespace-nowrap px-6 py-1 font-medium">
+                        <a href="/#events"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                handleNavClick('#events');
+                            }}
+                            className="block text-2xl bg-white rounded-tl-2xl rounded-br-2xl text-black hover:scale-120 transition-all duration-300 no-underline whitespace-nowrap px-6 py-1 font-medium">
                             EVENTS
                         </a>
                         <a href="/teams" className="block text-2xl bg-white rounded-tl-2xl rounded-br-2xl text-black hover:scale-120 transition-all duration-300 no-underline whitespace-nowrap px-6 py-1 font-medium">
@@ -74,13 +105,28 @@ export default function Navbar() {
                     <a href="/" className="block text-2xl text-white no-underline font-bold">
                         HOME
                     </a>
-                    <a href="/#about" className="block text-2xl text-white no-underline font-bold">
+                    <a href="#about"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            handleNavClick('#about');
+                        }}
+                        className="block text-2xl text-white no-underline font-bold">
                         ABOUT
                     </a>
-                    <a href="/#shades" className="block text-2xl text-white no-underline font-bold">
+                    <a href="#shades"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            handleNavClick('#shades');
+                        }}
+                        className="block text-2xl text-white no-underline font-bold">
                         ARTISTS
                     </a>
-                    <a href="/#events" className="block text-2xl text-white no-underline font-bold">
+                    <a href="#events"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            handleNavClick('#events');
+                        }}
+                        className="block text-2xl text-white no-underline font-bold">
                         EVENTS
                     </a>
                     <a href="/teams" className="block text-2xl text-white no-underline font-bold">
@@ -119,6 +165,6 @@ export default function Navbar() {
                     </a>
                 </div>
             </div>
-        </nav>
+        </nav >
     )
 }
