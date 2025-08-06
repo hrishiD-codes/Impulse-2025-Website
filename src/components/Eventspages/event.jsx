@@ -2,11 +2,11 @@
 import { useState, useEffect, useRef } from 'react';
 
 export default function Events() {
-    const Dance = '../../../public/videos/dance.mp4';
-    const Music = '../../../public/videos/music.mp4';
-    const rhyme = '../../../public/videos/rhyme.mp4';
-    const ramp = '../../../public/videos/Ramp.mp4';
-    const Drama = '../../../public/videos/drama.mp4';
+    const Dance = '/videos/dance.mp4';
+    const Music = '/videos/music.mp4';
+    const rhyme = '/videos/rhyme.mp4';
+    const ramp = '/videos/Ramp.mp4';
+    const Drama = '/videos/drama.mp4';
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
