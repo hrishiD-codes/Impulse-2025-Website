@@ -79,7 +79,7 @@ export default function Navbar() {
                             EVENTS
                         </a>
                         <a href="/teams" className="block text-2xl bg-white rounded-tl-2xl rounded-br-2xl text-black hover:scale-120 transition-all duration-300 no-underline whitespace-nowrap px-6 py-1 font-medium">
-                            TEAM
+                            TEAMS
                         </a>
                         <a href="/contact" className="block text-2xl bg-white rounded-tl-2xl rounded-br-2xl text-black hover:scale-120 transition-all duration-300 no-underline whitespace-nowrap px-6 py-1 font-medium">
                             GET IN TOUCH
