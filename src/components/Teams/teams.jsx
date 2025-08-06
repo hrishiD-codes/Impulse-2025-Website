@@ -164,7 +164,7 @@ export default function Teams() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h1 className="text-6xl font-bold bg-gradient-to-r from-cus-violet via-cus-pink to-cus-orange bg-clip-text text-transparent mb-6">
+                        <h1 className="font-akira text-6xl font-bold bg-gradient-to-r from-cus-violet via-cus-pink to-cus-orange bg-clip-text text-transparent mb-6">
                             Meet Our Team
                         </h1>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">

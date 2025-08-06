@@ -1,6 +1,7 @@
 
 import '../../index.css';
 import { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Star from './star.jsx';
 import facebook from '../../../public/icons/facebook.svg';
 import instagram from '../../../public/icons/instagram.svg';
@@ -9,6 +10,8 @@ import youtube from '../../../public/icons/youtube.svg';
 export default function Navbar() {
     const [isSidenavOpen, setIsSidenavOpen] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const openNav = () => {
         setIsSidenavOpen(true);
@@ -24,14 +27,44 @@ export default function Navbar() {
             closeNav();
         }
 
-        // Smooth scroll to section
-        const element = document.querySelector(sectionId);
-        if (element) {
-            element.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+        // Check if we're on the home page
+        if (location.pathname === '/') {
+            // We're on home page, just scroll to section
+            const element = document.querySelector(sectionId);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        } else {
+            // We're on a different page, navigate to home first, then scroll
+            navigate('/');
+            // Wait for navigation to complete, then scroll
+            setTimeout(() => {
+                const element = document.querySelector(sectionId);
+                if (element) {
+                    element.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }, 100);
         }
+    };
+
+    const handleHomeNavigation = () => {
+        if (isSidenavOpen) {
+            closeNav();
+        }
+        navigate('/');
+    };
+
+    const handleRouteNavigation = (route) => {
+        if (isSidenavOpen) {
+            closeNav();
+        }
+        navigate(route);
     };
 
     return (
@@ -44,46 +77,52 @@ export default function Navbar() {
                 <div className=" absolute top-0 left-0 h-15 w-15 z-10 text-orange-400 mt-4 ml-4 hover:rotate-180 transition-all duration-500">
                     <Star />
                 </div>
-                <h1 className='absolute top-6.5 left-11 text-3xl z-15 font-extrabold text-white'>
+                <h1 className='absolute top-6.5 left-11 text-3xl z-15 font-technor font-extrabold text-white'>
                     MENU
                 </h1>
 
                 <div className={`hidden md:block absolute top-5 left-4 h-[30rem] w-[18rem] bg-[url(/giphy.gif)] rounded-lg z-5 transition-all duration-300 ${isHovered ? 'opacity-100 visible' : 'opacity-0 invisible'
                     }`}>
                     <div className="flex flex-col p-4 gap-6 justify-center items-start mt-15 pl-7">
-                        <a href="/" className="block text-2xl bg-white rounded-tl-2xl rounded-br-2xl text-black hover:scale-120 transition-all duration-300 no-underline whitespace-nowrap px-6 py-1 font-medium">
+                        <button
+                            onClick={handleHomeNavigation}
+                            className="block text-2xl bg-white rounded-tl-2xl rounded-br-2xl text-black hover:scale-120 transition-all duration-300 no-underline whitespace-nowrap px-6 py-1 font-technor font-medium border-none cursor-pointer">
                             HOME
-                        </a>
-                        <a href="#about"
+                        </button>
+                        <button
                             onClick={(e) => {
                                 e.preventDefault();
                                 handleNavClick('#about');
                             }}
-                            className="block text-2xl bg-white rounded-tl-2xl rounded-br-2xl text-black hover:scale-120 transition-all duration-300 no-underline whitespace-nowrap px-6 py-1 font-medium">
+                            className="block text-2xl bg-white rounded-tl-2xl rounded-br-2xl text-black hover:scale-120 transition-all duration-300 no-underline whitespace-nowrap px-6 py-1 font-technor font-medium border-none cursor-pointer">
                             ABOUT
-                        </a>
-                        <a href="/#shades"
+                        </button>
+                        <button
                             onClick={(e) => {
                                 e.preventDefault();
                                 handleNavClick('#shades');
                             }}
-                            className="block text-2xl bg-white rounded-tl-2xl rounded-br-2xl text-black hover:scale-120 transition-all duration-300 no-underline whitespace-nowrap px-6 py-1 font-medium">
+                            className="block text-2xl bg-white rounded-tl-2xl rounded-br-2xl text-black hover:scale-120 transition-all duration-300 no-underline whitespace-nowrap px-6 py-1 font-technor font-medium border-none cursor-pointer">
                             ARTISTS
-                        </a>
-                        <a href="/#events"
+                        </button>
+                        <button
                             onClick={(e) => {
                                 e.preventDefault();
                                 handleNavClick('#events');
                             }}
-                            className="block text-2xl bg-white rounded-tl-2xl rounded-br-2xl text-black hover:scale-120 transition-all duration-300 no-underline whitespace-nowrap px-6 py-1 font-medium">
+                            className="block text-2xl bg-white rounded-tl-2xl rounded-br-2xl text-black hover:scale-120 transition-all duration-300 no-underline whitespace-nowrap px-6 py-1 font-technor font-medium border-none cursor-pointer">
                             EVENTS
-                        </a>
-                        <a href="/teams" className="block text-2xl bg-white rounded-tl-2xl rounded-br-2xl text-black hover:scale-120 transition-all duration-300 no-underline whitespace-nowrap px-6 py-1 font-medium">
+                        </button>
+                        <button
+                            onClick={() => handleRouteNavigation('/teams')}
+                            className="block text-2xl bg-white rounded-tl-2xl rounded-br-2xl text-black hover:scale-120 transition-all duration-300 no-underline whitespace-nowrap px-6 py-1 font-technor font-medium border-none cursor-pointer">
                             TEAMS
-                        </a>
-                        <a href="/contact" className="block text-2xl bg-white rounded-tl-2xl rounded-br-2xl text-black hover:scale-120 transition-all duration-300 no-underline whitespace-nowrap px-6 py-1 font-medium">
+                        </button>
+                        <button
+                            onClick={() => handleRouteNavigation('/contact')}
+                            className="block text-2xl bg-white rounded-tl-2xl rounded-br-2xl text-black hover:scale-120 transition-all duration-300 no-underline whitespace-nowrap px-6 py-1 font-technor font-medium border-none cursor-pointer">
                             GET IN TOUCH
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -96,45 +135,51 @@ export default function Navbar() {
                     <div className="absolute top-0 left-0 h-15 w-15 text-orange-400 mt-4 ml-4 hover:rotate-180 transition-all duration-500">
                         <Star />
                     </div>
-                    <h1 className='absolute top-6.5 left-11 text-3xl font-extrabold text-white'>
+                    <h1 className='absolute top-6.5 left-11 text-3xl font-technor font-extrabold text-white'>
                         {isSidenavOpen ? 'CLOSE' : 'MENU'}
                     </h1>
                 </div>
 
                 <div className="flex flex-col items-center justify-center gap-6 mt-15">
-                    <a href="/" className="block text-2xl text-white no-underline font-bold">
+                    <button
+                        onClick={handleHomeNavigation}
+                        className="block text-2xl text-white no-underline font-technor font-bold bg-transparent border-none cursor-pointer">
                         HOME
-                    </a>
-                    <a href="#about"
+                    </button>
+                    <button
                         onClick={(e) => {
                             e.preventDefault();
                             handleNavClick('#about');
                         }}
-                        className="block text-2xl text-white no-underline font-bold">
+                        className="block text-2xl text-white no-underline font-technor font-bold bg-transparent border-none cursor-pointer">
                         ABOUT
-                    </a>
-                    <a href="#shades"
+                    </button>
+                    <button
                         onClick={(e) => {
                             e.preventDefault();
                             handleNavClick('#shades');
                         }}
-                        className="block text-2xl text-white no-underline font-bold">
+                        className="block text-2xl text-white no-underline font-technor font-bold bg-transparent border-none cursor-pointer">
                         ARTISTS
-                    </a>
-                    <a href="#events"
+                    </button>
+                    <button
                         onClick={(e) => {
                             e.preventDefault();
                             handleNavClick('#events');
                         }}
-                        className="block text-2xl text-white no-underline font-bold">
+                        className="block text-2xl text-white no-underline font-technor font-bold bg-transparent border-none cursor-pointer">
                         EVENTS
-                    </a>
-                    <a href="/teams" className="block text-2xl text-white no-underline font-bold">
-                        TEAM
-                    </a>
-                    <a href="#contact" className="block text-2xl text-white no-underline font-bold">
+                    </button>
+                    <button
+                        onClick={() => handleRouteNavigation('/teams')}
+                        className="block text-2xl text-white no-underline font-technor font-bold bg-transparent border-none cursor-pointer">
+                        TEAMS
+                    </button>
+                    <button
+                        onClick={() => handleRouteNavigation('/contact')}
+                        className="block text-2xl text-white no-underline font-technor font-bold bg-transparent border-none cursor-pointer">
                         GET IN TOUCH
-                    </a>
+                    </button>
                 </div>
             </div>
 
