@@ -50,11 +50,11 @@ export default function Faq() {
             <div className="max-w-7xl mx-auto">
 
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl sm:text-5xl font-bold text-white mb-4 flex items-center justify-center gap-1">
+                    <h2 className="font-akira text-3xl sm:text-5xl font-bold text-white mb-4 flex items-center justify-center gap-1">
                         FAQs Just for You
-                        <img src={Handlove} alt="handlove" className="h-[4rem] w-[4rem] sm:h-[5rem] sm:w-[5rem] rotate-23"/>
+                        <img src={Handlove} alt="handlove" className="h-[4rem] w-[4rem] sm:h-[5rem] sm:w-[5rem] rotate-23" />
                     </h2>
-                    <p className="text-lg text-white max-w-5xl mx-auto">
+                    <p className="font-akira text-lg font-normal text-white max-w-5xl mx-auto">
                         Guess what? We've got the answers you've been waiting for!
                     </p>
                 </div>
@@ -64,7 +64,7 @@ export default function Faq() {
                         <div key={index} className="bg-gray-200 rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl ">
 
                             <button onClick={() => toggleFaq(index)} className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200">
-                                <h3 className="text-lg font-semibold text-black pr-4">
+                                <h3 className="font-akira text-lg font-semibold text-black pr-4">
                                     {faq.question}
                                 </h3>
                                 <div className="flex-shrink-0 ">
@@ -79,7 +79,7 @@ export default function Faq() {
                             <div className={`transition-all duration-500 ease-in-out overflow-hidden ${openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
                                 <div className="px-6 pb-5 pt-0 ">
                                     <div className="h-px bg-gray-100 mb-4"></div>
-                                    <p className="text-black leading-relaxed ">
+                                    <p className="font-akira text-black font-normal leading-relaxed ">
                                         {faq.answer}
                                     </p>
                                 </div>

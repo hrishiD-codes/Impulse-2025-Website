@@ -12,6 +12,7 @@ import MarqueeCombine from './components/Marquee/marqueCombine.jsx';
 import Faq from './components/Faq/faq.jsx';
 import Footer from './components/Footer/footer.jsx';
 import Teams from './components/Teams/teams.jsx';
+import Contact from './components/contact/contact.jsx';
 
 // Homepage content component
 const HomePage = () => {
@@ -54,6 +55,7 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/teams" element={<Teams />} />
+                    <Route path="/contact" element={<Contact />} />
                 </Routes>
             </AppLayout>
         </Router>

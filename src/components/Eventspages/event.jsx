@@ -180,8 +180,8 @@ export default function Events() {
     return (
         <div className="relative min-h-screen bg-black flex flex-col items-center justify-center p-2 sm:p-4 overflow-hidden">
             <div className="absolute top-4 sm:top-8 mb-4 sm:mb-8 pt-2 sm:pt-5 text-center px-4">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-4">Our Events</h1>
-                <p className="text-sm sm:text-lg md:text-xl text-white px-2">Discover the beauty of our heritage through six amazing events</p>
+                <h1 className="font-akira text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-4">Our Events</h1>
+                <p className="font-akira text-sm sm:text-lg md:text-xl font-normal text-white px-2">Discover the beauty of our heritage through six amazing events</p>
             </div>
             <div
                 ref={containerRef}
@@ -244,7 +244,7 @@ export default function Events() {
                                         {card.tags.map((tag, tagIndex) => (
                                             <span
                                                 key={tagIndex}
-                                                className="bg-white/50 backdrop-blur-sm text-black px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-medium"
+                                                className="font-akira bg-white/50 backdrop-blur-sm text-black px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-medium"
                                             >
                                                 {tag}
                                             </span>
@@ -252,7 +252,7 @@ export default function Events() {
                                     </div>
 
                                     <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4">
-                                        <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-black px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-bold">
+                                        <span className="font-akira bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-black px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-bold">
                                             {card.platform}
                                         </span>
                                     </div>
@@ -271,7 +271,7 @@ export default function Events() {
                                     {card.tags.map((tag, tagIndex) => (
                                         <span
                                             key={tagIndex}
-                                            className="bg-white/20 backdrop-blur-sm text-white px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-medium"
+                                            className="font-akira bg-white/20 backdrop-blur-sm text-white px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-medium"
                                         >
                                             {tag}
                                         </span>
@@ -279,7 +279,7 @@ export default function Events() {
                                 </div>
 
                                 <div className="absolute bottom-2 sm:bottom-4 left-2 sm:left-4">
-                                    <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-black px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-bold">
+                                    <span className="font-akira bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-black px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-bold">
                                         {card.platform}
                                     </span>
                                 </div>
@@ -321,7 +321,7 @@ export default function Events() {
 
             {/* Auto-play indicator */}
             <div className="absolute flex items-center gap-1 sm:gap-2 top-35 lg:top-10 right-4 sm:right-8 bg-white px-2 sm:px-4 py-1 sm:py-2 rounded-full cursor-pointer">
-                <h1 className='text-sm sm:text-xl md:text-2xl font-bold text-black'>LIVE</h1>
+                <h1 className='font-akira text-sm sm:text-xl md:text-2xl font-bold text-black'>LIVE</h1>
                 <div className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${(autoPlay && !isVideoPlaying) ? 'bg-green-400' : 'bg-red-400'} animate-pulse`} />
             </div>
         </div>
