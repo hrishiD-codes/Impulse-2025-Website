@@ -1,4 +1,3 @@
-
 .cards-container {
     position: relative;
     display: flex;
@@ -178,40 +177,6 @@
     z-index: 1;
 }
 
-.card-title {
-    font-size: 28px;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 16px;
-    text-transform: lowercase;
-}
-
-.card-divider {
-    width: 60px;
-    height: 2px;
-    background-color: white;
-    margin-bottom: 20px;
-}
-
-.card-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.card-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
-    font-size: 14px;
-    opacity: 0.9;
-}
-
-.bullet {
-    margin-right: 8px;
-    font-size: 12px;
-}
-
 /******************************** Scroll animation for md+ screens *********************************/
 @media (max-width: 1024px) {
     .cards-container {
@@ -290,6 +255,7 @@
         z-index: auto !important;
     }
 }
+
 /******************************** Mobile layout for smaller screens *********************************/
 @media (max-width: 767px) {
     .cards-container {

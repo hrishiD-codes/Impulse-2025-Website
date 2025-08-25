@@ -1,20 +1,22 @@
 {
-    "conveners": [
+    "convener": [
         {
             "id": 1,
-            "name": "Dr. John Smith",
-            "position": "Faculty Convener",
-            "image": "/teams/Subhro.jpg",
+            "name": "Mrs. Subhra Sarkar",
+            "position": "Convener",
+            "image": "/teams/subhra.jpg",
             "social": {
                 "linkedin": "",
                 "instagram": ""
             }
-        },
+        }
+    ],
+    "coordinator": [
         {
             "id": 2,
-            "name": "Prof. Sarah Johnson",
-            "position": "Co-Convener",
-            "image": "/teams/Subhro.jpg",
+            "name": "Mr. Rajesh Roy",
+            "position": "Coordinator",
+            "image": "/teams/rajesh.jpg",
             "social": {
                 "linkedin": "",
                 "instagram": ""
@@ -24,101 +26,245 @@
     "organizers": [
         {
             "id": 3,
-            "name": "Alex Rodriguez",
-            "position": "Event Head",
-            "image": "/teams/Subhro.jpg",
+            "name": "Rupam Ghosh",
+            "position": "General Secretery",
+            "image": "/teams/rupam.jpg",
             "social": {
                 "linkedin": "",
-                "instagram": ""
+                "instagram": "https://www.instagram.com/_rupam_040?igsh=MWljd3lqbnF1OXV6Yw=="
             }
         },
         {
             "id": 4,
-            "name": "Emma Wilson",
-            "position": "Cultural Head",
-            "image": "/teams/Subhro.jpg",
+            "name": "Tuhin Kanti Panja",
+            "position": "Assistant General Secretary",
+            "image": "/teams/tuhin.jpg",
             "social": {
-                "linkedin": "",
-                "instagram": ""
+                "linkedin": "https://www.linkedin.com/in/tuhin-kanti-panja-a8a317256?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                "instagram": "https://www.instagram.com/_tuhin.exe_?igsh=MXZ6ODZma250OXN1cw=="
             }
         },
         {
             "id": 5,
-            "name": "Michael Chen",
-            "position": "Technical Head",
-            "image": "/teams/Subhro.jpg",
+            "name": "Biplab Samanta",
+            "position": "Assistant General Secretary",
+            "image": "/teams/biplab.jpg",
             "social": {
                 "linkedin": "",
-                "instagram": ""
+                "instagram": "https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=g63w536"
             }
         },
         {
             "id": 6,
-            "name": "Sofia Garcia",
-            "position": "Marketing Head",
-            "image": "/teams/Subhro.jpg",
+            "name": "Adarsh Raj",
+            "position": "Assistant General Secretary",
+            "image": "/teams/adarsh.jpg",
             "social": {
                 "linkedin": "",
                 "instagram": ""
+            }
+        },
+        {
+            "id": 7,
+            "name": "Ritankar Das",
+            "position": "Assistant General Secretary",
+            "image": "/teams/ritankar.jpg",
+            "social": {
+                "linkedin": "https://www.linkedin.com/in/ritankar-das-3a05b1315?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                "instagram": "https://www.instagram.com/ritankar_689?igsh=cTNyaTR5Y2Nmczd0"
+            }
+        },{
+            "id": 8,
+            "name": "Aritra Maity",
+            "position": "Cultural Secretery",
+            "image": "/teams/aritra.jpg",
+            "social": {
+                "linkedin": "https://www.linkedin.com/in/aritra-maity-6b1343248?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                "instagram": "https://www.instagram.com/aritramaityofficial?igsh=Z3ppa2tteXRvNTZi"
+            }
+        },{
+            "id": 9,
+            "name": "Anjishnu Bhowal",
+            "position": "Assistant Cultural Secretary",
+            "image": "/teams/anjishnu.jpg",
+            "social": {
+                "linkedin": "https://www.linkedin.com/in/anjishnu-bhowal-229546301?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                "instagram": "https://www.instagram.com/_anjishnu_bhowal_?igsh=Nm8yZGZrN2s5Znl6"
+            }
+        },{
+            "id": 10,
+            "name": "Tanisha Roy",
+            "position": "Assistant Cultural Secretary",
+            "image": "/teams/tanisha.jpg",
+            "social": {
+                "linkedin": "https://www.linkedin.com/in/tanisha-roy-769a472a9",
+                "instagram": "https://www.instagram.com/art_amour4060.roy?igsh=N3ZmNTI1NXhlY3Vw"
+            }
+        },{
+            "id": 11,
+            "name": "Pritha Modak",
+            "position": "Assistant Cultural Secretary",
+            "image": "/teams/pritha.jpg",
+            "social": {
+                "linkedin": "",
+                "instagram": "https://www.instagram.com/invites/contact/?igsh=bfpg3r6hugm1&utm_content=5jsuuky"
+            }
+        },{
+            "id": 12,
+            "name": "Soumyadeep Paul",
+            "position": "Assistant Cultural Secretary",
+            "image": "/teams/soumyadeep.jpg",
+            "social": {
+                "linkedin": "",
+                "instagram": "https://www.instagram.com/iam_soumya_deep_?igsh=dm1rdnY1ZWNocWhq"
+            }
+        },{
+            "id": 13,
+            "name": "Yubraj Sharma",
+            "position": "Assistant Cultural Secretary",
+            "image": "/teams/yubraj.jpg",
+            "social": {
+                "linkedin": "https://www.linkedin.com/me?trk=p_mwlite_feed-secondary_nav",
+                "instagram": "https://www.instagram.com/yubraj_sharma20?igsh=cDl0emZ6MWhpcTRw"
             }
         }
     ],
-    "coordinators": [
+    "head-coordinators": [
         {
-            "id": 7,
-            "name": "David Kim",
-            "position": "Logistics Coordinator",
-            "image": "/teams/Subhro.jpg",
+            "id": 14,
+            "name": "Shreya Sarkar",
+            "position": "Fashion Show Head Coordinator",
+            "image": "/teams/shreya.jpg",
             "social": {
-                "linkedin": "",
-                "instagram": ""
+                "linkedin": "https://www.linkedin.com/in/shreya-sarkar-7a6577275",
+                "instagram": "https://www.instagram.com/swala.laaa?igsh=NjR5OXBlZHFncDZv"
             }
         },
         {
-            "id": 8,
-            "name": "Lisa Zhang",
-            "position": "Sponsorship Coordinator",
-            "image": "/teams/Subhro.jpg",
+            "id": 15,
+            "name": "Pravha Thakur",
+            "position": "Fashion Show Head Coordinator",
+            "image": "/teams/pravha.png",
             "social": {
-                "linkedin": "",
-                "instagram": ""
+                "linkedin": "http://www.linkedin.com/in/pravha-thakur",
+                "instagram": "https://www.instagram.com/prabha__thakur/"
             }
         },
         {
-            "id": 9,
-            "name": "Ryan Thompson",
-            "position": "Media Coordinator",
-            "image": "/teams/Subhro.jpg",
+            "id": 16,
+            "name": "Sayantan Mitra",
+            "position": "Drama Head Coordinator",
+            "image": "/teams/sayantan.jpg",
             "social": {
-                "linkedin": "",
-                "instagram": ""
+                "linkedin": "www.linkedin.com/in/sayantanmitra-bba79429a",
+                "instagram": "https://www.instagram.com/mittirbabu?igsh=MTk0NnhtMDRkcGY1NQ=="
             }
         },
         {
-            "id": 10,
-            "name": "Priya Patel",
-            "position": "Registration Coordinator",
-            "image": "/teams/Subhro.jpg",
+            "id": 17,
+            "name": "Shayeri Ghosh",
+            "position": "Drama Head Coordinator",
+            "image": "/teams/shayeri.jpg",
+            "social": {
+                "linkedin": "https://www.linkedin.com/in/shayeri-ghosh-92777b230?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                "instagram": "https://www.instagram.com/its_miss_leo_18?igsh=MTU2bnJtZWIwa3FkMw=="
+            }
+        },
+        {
+            "id": 18,
+            "name": "Arshad Khan",
+            "position": "Drama Head Coordinator",
+            "image": "/teams/arshad.jpg",
+            "social": {
+                "linkedin": "https://www.linkedin.com/in/arshadkhan16",
+                "instagram": "https://www.instagram.com/arshadkh162003?igsh=ZmpkejE4cW1kdHdh"
+            }
+        },
+        {
+            "id": 19,
+            "name": "Sagnik Sen",
+            "position": "Recitation Head Coordinator",
+            "image": "/teams/sagnik.jpg",
+            "social": {
+                "linkedin": "https://in.linkedin.com/in/sagnik-sen-480b65292",
+                "instagram": "https://www.instagram.com/sen_sagnik_1202?igsh=eGdma2RwcDVlNXV3"
+            }
+        },
+        {
+            "id": 20,
+            "name": "SK Ragib Hasan",
+            "position": "Music Head Coordinator",
+            "image": "/teams/ragib.jpg",
+            "social": {
+                "linkedin": "https://www.linkedin.com/in/ragib-hasan-9215861b5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                "instagram": "https://www.instagram.com/rising_melody?igsh=MTRmcGpzZnZoOW10OQ=="
+            }
+        },
+        {
+            "id": 21,
+            "name": "Anindita Polley",
+            "position": "Music Head Coordinator",
+            "image": "/teams/anindita.jpg",
+            "social": {
+                "linkedin": "https://www.linkedin.com/in/anindita-polley-0a128328b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                "instagram": "https://www.instagram.com/anindita_polley02/profilecard/?igsh=aGE5NzNycjdsNWVq"
+            }
+        },
+        {
+            "id": 22,
+            "name": "Anshuli Arya",
+            "position": "Anchoring Head Coordinator",
+            "image": "/teams/anshuli.jpg",
+            "social": {
+                "linkedin": "https://www.linkedin.com/in/anshuli-arya-8aa270270?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+                "instagram": "https://www.instagram.com/sshh.lulu?igsh=MXBxdnExYzRsd3h5YQ=="
+            }
+        },
+        {
+            "id": 23,
+            "name": "Sruty Saha",
+            "position": "Anchoring Head Coordinator",
+            "image": "/teams/sruty.jpg",
+            "social": {
+                "linkedin": "https://in.linkedin.com/in/sruty-saha-s16",
+                "instagram": "https://www.instagram.com/srufiyana/"
+            }
+        },
+        {
+            "id": 24,
+            "name": "Sneha Dutta",
+            "position": "Dance Head Coordinator",
+            "image": "/teams/sneha.jpg",
             "social": {
                 "linkedin": "",
-                "instagram": ""
+                "instagram": "https://www.instagram.com/snehaadutta?igsh=MTdsdm1ya3p0MmdhNw=="
+            }
+        },
+        {
+            "id": 25,
+            "name": "Soumili Bhunia",
+            "position": "Dance Head Coordinator",
+            "image": "/teams/soumili.jpg",
+            "social": {
+                "linkedin": "https://www.linkedin.com/in/soumili-bhunia-0a6b3b309",
+                "instagram": "https://www.instagram.com/bhuniasoumili601?igsh=dmtudDZ6NWlmempt"
             }
         }
     ],
     "developers": [
         {
-            "id": 11,
+            "id": 26,
             "name": "Hrishikesh Das",
             "position": "Lead Developer",
-            "image": "/teams/Subhro.jpg",
+            "image": "/teams/Hrishi.jpg",
             "social": {
-                "linkedin": "",
+                "linkedin": "https://www.linkedin.com/in/dashrishikesh/",
                 "instagram": "",
-                "github": ""
+                "github": "https://github.com/hrishiD-codes"
             }
         },
         {
-            "id": 12,
+            "id": 27,
             "name": "Subhro Mohanta",
             "position": "Asst. Developer",
             "image": "/teams/Subhro.jpg",

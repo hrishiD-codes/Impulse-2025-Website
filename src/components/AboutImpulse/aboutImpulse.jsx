@@ -1,9 +1,8 @@
 
 import '../../index.css';
 import { useState, useRef } from 'react';
-import abtImp from '../../../public/videos/impulse.mp4';
+import abtImp from '/videos/impulse.mp4';
 import GoodVibes from './goodvibes.svg';
-import Fire from './fire.svg';
 import letsgo from './lets-go.svg'
 
 export default function AboutImpulse() {

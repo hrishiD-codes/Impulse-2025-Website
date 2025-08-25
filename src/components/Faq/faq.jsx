@@ -8,36 +8,44 @@ export default function Faq() {
 
     const faqData = [
         {
-            question: "When and where is the cultural fest taking place?",
-            answer: "The cultural fest will be held from March 15-17, 2024, at the Main Campus Auditorium and surrounding venues. The event runs from 9:00 AM to 10:00 PM each day."
+            question: "What is Impulse?",
+            answer: "Impulse is the annual cultural extravaganza of Techno Bengal Institute of Technology, formerly known as Bengal Institute of Technology. At Impulse, where creativity meets celebration! From dance and drama to music, art, and quirky contests — it's a three-day fusion of talent, fun, and unforgettable memories."
         },
         {
-            question: "How can I register for events and competitions?",
-            answer: "Registration is open online through our official website. You can also register on-site during the first day of the fest. Early bird registration closes on March 10th with discounted fees."
+            question: "Who can participate in the fest events?",
+            answer: "Students from all colleges and universities are welcome to participate, unless otherwise mentioned inspecific event rules. Bring your team or come solo — there's something for everyone!"
         },
         {
-            question: "What types of cultural events will be featured?",
-            answer: "We'll have dance competitions, music performances, drama shows, art exhibitions, poetry slams, fashion shows, and traditional cultural displays from various regions. There are both competitive and non-competitive categories."
+            question: "How do I register for events?",
+            answer: "Registration is super easy! Head over to the Events section, select your event(s), and click on the Register Now button. Fill in the required details and you're in!"
         },
         {
-            question: "Is there an entry fee for participants and spectators?",
-            answer: "Entry for spectators is free! Participants pay a nominal registration fee: ₹100 for solo events, ₹200 for group events. Students get a 50% discount with valid ID."
+            question: "Is there any registration fee?",
+            answer: "No, registration is completely free! All events are open to participants at no cost."
         },
         {
-            question: "Can students from other colleges participate?",
-            answer: "Absolutely! We welcome participants from all colleges and universities. Some events are specifically designed for inter-college competition to promote cultural exchange."
+            question: "Where is the fest happening?",
+            answer: "The fest will be held at Mohit Moitra Mancha. Detailed directions and campus map are available on our Footer Venue page."
         },
         {
-            question: "What prizes and recognition will be awarded?",
-            answer: "Winners receive cash prizes up to ₹25,000, trophies, certificates, and special recognition. We also have audience choice awards and participation certificates for all contestants."
+            question: "Do I need to carry my college ID card?",
+            answer: "Yes. A valid college ID card is mandatory for all participants and attendees for entry into the Auditorium hall and participate in the registered events."
         },
         {
-            question: "Are there food and accommodation arrangements?",
-            answer: "Yes! We have food courts with diverse cuisines and cultural delicacies. Accommodation can be arranged in nearby hostels and guesthouses for outstation participants at subsidized rates."
+            question: "Will certificates or prizes be provided?",
+            answer: "Absolutely! Winners receive exciting prizes, and all participants will get certificates of participation for selected events."
         },
         {
-            question: "What should I bring for my performance?",
-            answer: "Bring your costumes, props, and any special equipment. We provide basic sound systems, lighting, and stage setup. Submit your technical requirements during registration for better coordination."
+            question: "Can I attend as an audience member without participating?",
+            answer: "Definitely! The fest is open to all college students you just need to have our hall pass to enter the Auditorium hall. Come experience the energy, creativity, and chaos!"
+        },
+        {
+            question: "How do I stay updated about schedules and announcements?",
+            answer: "Follow us on Instagram @tbit_impulse, keep checking the Schedule page, to receive updates directly."
+        },
+        {
+            question: "Who do I contact in case of queries or issues?",
+            answer: "You can reach out to our organizing team through the Contact Us page or email us at impulse@bitcollege.in - we're here to help!"
         }
     ];
 
