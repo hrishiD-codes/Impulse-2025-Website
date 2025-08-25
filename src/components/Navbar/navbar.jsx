@@ -3,9 +3,9 @@ import '../../index.css';
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Star from './star.jsx';
-import facebook from '../../../public/icons/facebook.svg';
-import instagram from '../../../public/icons/instagram.svg';
-import youtube from '../../../public/icons/youtube.svg';
+import facebook from '/icons/facebook.svg';
+import instagram from '/icons/instagram.svg';
+import youtube from '/icons/youtube.svg';
 
 export default function Navbar() {
     const [isSidenavOpen, setIsSidenavOpen] = useState(false);
@@ -22,14 +22,11 @@ export default function Navbar() {
     };
 
     const handleNavClick = (sectionId) => {
-        // Close mobile menu if open
         if (isSidenavOpen) {
             closeNav();
         }
 
-        // Check if we're on the home page
         if (location.pathname === '/') {
-            // We're on home page, just scroll to section
             const element = document.querySelector(sectionId);
             if (element) {
                 element.scrollIntoView({
@@ -38,9 +35,7 @@ export default function Navbar() {
                 });
             }
         } else {
-            // We're on a different page, navigate to home first, then scroll
             navigate('/');
-            // Wait for navigation to complete, then scroll
             setTimeout(() => {
                 const element = document.querySelector(sectionId);
                 if (element) {
@@ -59,7 +54,6 @@ export default function Navbar() {
         }
         navigate('/');
     };
-
     const handleRouteNavigation = (route) => {
         if (isSidenavOpen) {
             closeNav();
@@ -201,7 +195,7 @@ export default function Navbar() {
                         <img src={instagram} alt="instagram" className='w-12 h-12 sm:h-15 sm:w-15' />
                     </a>
                     <a
-                        href="#youtube"
+                        href="https://youtube.com/@bengalinstituteoftechnolog7911"
                         className="cursor-pointer hover:scale-120 trasition-all duration-300"
                         aria-label="Facebook"
                         target='_blank'

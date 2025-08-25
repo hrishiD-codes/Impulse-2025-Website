@@ -1,7 +1,6 @@
 
-// import homeVideo from '../../assets/Videos/intro.mp4';
-import homeVideo from '../../../public/videos/coverpage.mp4';
-import Logo from '../../../public/Images/logo.jpg'
+import homeVideo from '/videos/coverpage.mp4';
+import Logo from '/Images/logo.jpg'
 
 export default function Home() {
     return (
@@ -16,7 +15,26 @@ export default function Home() {
                 ></video>
 
                 <div className="absolute inset-0 flex flex-col items-center justify-center z-1 px-4 sm:px-6 lg:px-8">
-                    {/* Homepage Logo */}
+                    {/* Three logos above main logo */}
+                    <div className="flex items-center justify-center gap-4 sm:gap-6 md:gap-8 mb-3 sm:mb-4">
+                        <img
+                            src="/Images/TIU.svg"
+                            alt="TIU Logo"
+                            className="w-12 h-12 md:w-16 md:h-16 object-contain"
+                        />
+                        <img
+                            src="/Images/25_logo.svg"
+                            alt="25 Logo"
+                            className="w-15 h-15 md:w-20 md:h-20 object-contain"
+                        />
+                        <img
+                            src="/Images/TBIT.svg"
+                            alt="TBIT Logo"
+                            className="w-12 h-12 md:w-16 md:h-16 object-contain"
+                        />
+                    </div>
+                    
+                    {/* Main Impulse logo */}
                     <div className="mb-4 sm:mb-6 lg:mb-5">
                         <img
                             src={Logo}
@@ -24,8 +42,6 @@ export default function Home() {
                             className="w-20 h-auto md:w-25 lg:w-30 xl:w-35 object-contain rounded-2xl"
                         />
                     </div>
-
-                    {/* Main Text */}
                     <div className="text-center mb-6 sm:mb-8 lg:mb-12">
                         <h1 className="font-akira text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold text-white">
                             Impulse
@@ -34,7 +50,6 @@ export default function Home() {
                             Storylines
                         </h1>
                     </div>
-
                     <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 lg:gap-8 w-full max-w-md sm:max-w-none">
                         <button className="font-akira w-full sm:w-auto bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:scale-105 text-black font-semibold px-6 py-3 sm:px-8 sm:py-3 lg:px-10 lg:py-4 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl text-sm sm:text-base lg:text-lg cursor-pointer">
                             Brochure
